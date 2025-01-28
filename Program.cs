@@ -20,6 +20,12 @@ namespace lecture1
                 Console.WriteLine(num);
             }
 
+            // Task 3 - Compute and display the sum
+            // T3.2 - In the Main method, display the sum of the generated
+            // numbers.
+            int array_sum = ComputeSum(random_num_array);
+            Console.WriteLine("\n\nSum: " + array_sum);
+
         }
 
         // T2.1 - Implement a method called GenerateRandomInteger
@@ -35,6 +41,19 @@ namespace lecture1
             }
 
             return new_random_array;
+        }
+
+        // T3.1 - Write a method named ComputeSum that takes an array
+        // of integers as input and returns their sum.
+        static int ComputeSum(int[] generated_array)
+        {
+            int sum = 0;
+            foreach (int num in generated_array)
+            {
+                sum += num;
+            }
+            
+            return sum;
         }
     }
 }
