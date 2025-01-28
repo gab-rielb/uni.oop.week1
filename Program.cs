@@ -30,6 +30,15 @@ namespace lecture1
             int[,] histogram = ComputeHistogram(random_num_array);
             DisplayHistogram(histogram, random_num_array);
 
+            // Task 5 - Implement and execute sorting
+            // T5.2 - After sorting, print the sorted numbers in the Main
+            // method.
+            int[] sorted_array = SimpleSort(random_num_array);
+            Console.WriteLine("\n\nSorted Array:");
+            foreach (int num in sorted_array)
+            {
+                Console.WriteLine(num);
+            }
         }
 
         // T2.1 - Implement a method called GenerateRandomInteger
@@ -86,6 +95,29 @@ namespace lecture1
             {
                 Console.WriteLine($"Number: {generated_array.Distinct().ToArray()[i]}, Frequency: {histogram[i, 0]}");
             }
+        }
+
+        // T5.1 - Implement a SimpleSort method using the insertion sort
+        // algorithm to sort the array
+        static int[] SimpleSort(int[] generated_array)
+        {
+            int[] sorted_array = generated_array;
+
+            for (int i = 1; i < generated_array.Length; i++)
+            {
+                int num = sorted_array[i];
+                int j = i - 1;
+
+                while (j >= 0 && sorted_array[j] > num)
+                {
+                    sorted_array[j + 1] = sorted_array[j];
+                    j--;
+                }
+
+                sorted_array[j + 1] = num;
+            }
+
+            return sorted_array;
         }
     }
 }
