@@ -64,8 +64,8 @@ namespace lecture1
         // computes the frequency of each number and stores it in an array.
         static int[,] ComputeHistogram(int[] generated_array)
         {
-            int unique_num_count = generated_array.Distinct().Count(); // Gets the number of unique numbers
-            int[,] histogram = new int[unique_num_count, 1]; // Generates a 2D array for each unique number (number, frequency)
+            int unique_num_count = generated_array.Distinct().Count(); // Gets the amount of unique numbers in the array
+            int[,] histogram = new int[unique_num_count, 1]; // Generates a 2D array for each unique number in the format (number, frequency)
             
 
             foreach (int num in generated_array)
